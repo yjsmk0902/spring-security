@@ -24,7 +24,9 @@ public class UserService implements UserDetailsService {
         return userRepository.findByEmail(email)
                 .orElseThrow(()->new UsernameNotFoundException(email));
     }
-
+    //회원 정보 저장
+    //  @Param userDto 회원정보가 들어있는 Dto
+    //  @return 저장되는 회원의 PK
     public Long save(UserDto userDto) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         userDto.setPassword(encoder.encode(userDto.getPassword()));
