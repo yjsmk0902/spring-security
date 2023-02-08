@@ -1,17 +1,21 @@
 package com.example.security.domain.entity;
 
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User implements UserDetails {
 
     @Id
@@ -19,14 +23,21 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long code;
 
-    @Column(name="email", unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
 
     @Column(name = "auth")
     private String auth;
+
+    @Builder
+    public User(String email, String password, String auth) {
+        this.email = email;
+        this.password = password;
+        this.auth = auth;
+    }
 
     @Override   //사용자의 권한을 컬렉션 형태로 반환 / 단 클래스의 자료형은 GrantedAuthority 를 구현해야함
     public Collection<? extends GrantedAuthority> getAuthorities() {
