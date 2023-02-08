@@ -1,5 +1,6 @@
 package com.example.security.config;
 
+import com.example.security.web.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
