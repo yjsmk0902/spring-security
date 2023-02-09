@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override   //인증을 무시할 경로를 설정해 놓을 수 있음
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/css/**", "/js/**", "/img/**"); //static 의 하위 폴더는 무조건 접근이 가능해야 하므로 인증을 무시해줌
+        web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/h2-console/**"); //static 의 하위 폴더는 무조건 접근이 가능해야 하므로 인증을 무시해줌
     }
 
     @Override   //http 관련 인증 설정이 가능함
