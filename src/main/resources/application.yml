@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    url: jdbc:h2:tcp://localhost/~/spring-security
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+    hibernate:
+      ddl-auto: create
+jwt:
+  secret:
+    key: @NcRfUjXn2r5u8x/A?D(G+KbPdSgVkYp
