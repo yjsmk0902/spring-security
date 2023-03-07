@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a636d1fd-ded3-4458-8210-8f24b8fa7713" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/study/springsecurity/domain/entity/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a636d1fd-ded3-4458-8210-8f24b8fa7713" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +127,7 @@
       <workItem from="1675834977911" duration="2068000" />
       <workItem from="1675917723144" duration="3617000" />
       <workItem from="1676335768936" duration="2792000" />
-      <workItem from="1678153987774" duration="1862000" />
+      <workItem from="1678153987774" duration="2162000" />
     </task>
     <servers />
   </component>
