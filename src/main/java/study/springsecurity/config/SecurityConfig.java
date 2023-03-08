@@ -65,7 +65,7 @@ public class SecurityConfig {
                 .antMatchers("/user/**").hasRole("USER")
                 .anyRequest().denyAll()
                 .and()
-                //JWT 인증 필터 적용
+                //JWT 인증 필터 적용 (Default => UsernamePasswordAuthenticationFilter)
                 .addFilterBefore(new JwtAuthenticationFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class)
                 //에러 핸들링
                 .exceptionHandling()
@@ -92,7 +92,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
+    @Bean       //Password 앞에 Encoding 방식이 붙은채로 저장됨
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
