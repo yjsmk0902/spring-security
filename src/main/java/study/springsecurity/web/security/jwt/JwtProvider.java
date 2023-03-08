@@ -1,4 +1,4 @@
-package study.springsecurity.web.service;
+package study.springsecurity.web.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -12,6 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import study.springsecurity.domain.entity.Authority;
+import study.springsecurity.web.service.JpaUserDetailService;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
