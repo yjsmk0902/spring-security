@@ -22,7 +22,7 @@ public class SignService {
     private final PasswordEncoder passwordEncoder;
     private final JwtProvider jwtProvider;
 
-    public SignRequest login(SignRequest request) {
+    public SignResponse login(SignRequest request) {
         Member member = memberRepository.findByAccount(request.getAccount()).orElseThrow(()
                 -> new BadCredentialsException("잘못된 계정정보입니다."));
         if (!passwordEncoder.matches(request.getPassword(), member.getPassword())) {
@@ -37,6 +37,7 @@ public class SignService {
                 .email(member.getEmail())
                 .roles(member.getRoles())
                 .token(jwtProvider.createToken(member.getAccount(), member.getRoles()))
+                .build();
     }
 
     public boolean signup(SignRequest request) throws Exception {
